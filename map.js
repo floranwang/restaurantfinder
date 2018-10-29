@@ -42,8 +42,8 @@ function initialData(data) {
 function update(lowestScore){
   for(var i = 0; i < allData.length; i++) {
 	   var restaurant_score = allData[i].inspection_score;
-     if(restaurant_score > lowestScore) {
-       filteredData.push(allData[i]);
+     if(Number(restaurant_score) >= Number(currScore)) {
+        filteredData.push(allData[i]);
 	   }
   }
 }
@@ -51,9 +51,7 @@ function update(lowestScore){
 function filterData() {
   filteredData = [];
   update(currScore);
-  if (currScore == 100){
-    filteredData = [];
-  }
+
   if (intersected) {
 	   for (var x = filteredData.length - 1; x >= 0; x--) {
        var currentDataPoint = filteredData[x];
