@@ -51,6 +51,9 @@ function update(lowestScore){
 function filterData() {
   filteredData = [];
   update(currScore);
+  if (currScore == 100){
+    filteredData = [];
+  }
   if (intersected) {
 	   for (var x = filteredData.length - 1; x >= 0; x--) {
        var currentDataPoint = filteredData[x];
